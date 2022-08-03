@@ -42,19 +42,21 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
-//        for (int i = 0; i <=100 ; i++) {
-//            if (i % 3 == 0 && i % 5 == 0){
-//                System.out.print("FizzBuzz, ");
-//            }
-//            else if (i % 3 == 0){
-//                System.out.print("Fizz, ");
-//            } else if (i % 5 == 0){
-//                System.out.print("Buzz, ");
-//            } else {
-//                System.out.print(i + ", ");
-//            }
-//        }
+        for (int i = 0; i <=100 ; i++) {
+            if (i % 3 == 0 && i % 5 == 0){
+                System.out.print("FizzBuzz, ");
+            }
+            else if (i % 3 == 0){
+                System.out.print("Fizz, ");
+            } else if (i % 5 == 0){
+                System.out.print("Buzz, ");
+            } else {
+                System.out.print(i + ", ");
+            }
+        }
 
+
+//        Square & cube table program:
         Scanner s = new Scanner(System.in);
 //        System.out.print("What would you like to sqube to?:");
 //        long userInput = s.nextInt();
@@ -79,29 +81,55 @@ public class ControlFlowExercises {
 //
 //        s.nextLine();
 
+//        Grading program:
+
+//        boolean confirmation;
+//        do {
+//            System.out.print("Enter a numerical grade from 0 to 100:");
+//            int userGrade = s.nextInt();
+//            if (userGrade <= 59) {
+//                System.out.println("Your grade: F");
+//            } else if (userGrade <= 64) {
+//                System.out.println("Your grade : D");
+//            } else if (userGrade <= 69) {
+//                System.out.println("Your grade : D+");
+//            } else if (userGrade <= 77) {
+//                System.out.println("Your grade : C");
+//            } else if (userGrade <= 79) {
+//                System.out.println("Your grade : C+");
+//            } else if (userGrade <= 87) {
+//                System.out.println("Your grade : B");
+//            } else if (userGrade <= 89) {
+//                System.out.println("Your grade : B+");
+//            } else if (userGrade <= 98) {
+//                System.out.println("Your grade : A");
+//            } else if (userGrade <= 100) {
+//                System.out.println("Your grade : A+");
+//            }
+//            s.nextLine();
+//            System.out.print("Continue? [y / n]");
+//            String userRes = s.next();
+//            confirmation = userRes.equals("y");
+//        } while (confirmation);
+
+//        Switch statement version of grading program:
+
         boolean confirmation;
         do {
-            System.out.print("Enter a numerical grade from 0 to 100:");
+            System.out.print("Enter a numeric grade:");
             int userGrade = s.nextInt();
-            if (userGrade <= 59) {
-                System.out.println("Your grade: F");
-            } else if (userGrade <= 64) {
-                System.out.println("Your grade : D");
-            } else if (userGrade <= 69) {
-                System.out.println("Your grade : D+");
-            } else if (userGrade <= 77) {
-                System.out.println("Your grade : C");
-            } else if (userGrade <= 79) {
-                System.out.println("Your grade : C+");
-            } else if (userGrade <= 87) {
-                System.out.println("Your grade : B");
-            } else if (userGrade <= 89) {
-                System.out.println("Your grade : B+");
-            } else if (userGrade <= 98) {
-                System.out.println("Your grade : A");
-            } else if (userGrade <= 100) {
-                System.out.println("Your grade : A+");
-            }
+            String dayString = switch (userGrade) {
+                case 99, 100 -> "A+";
+                case 90, 91, 92, 93, 94, 95, 96, 97, 98 -> "A";
+                case 88, 89 -> "B+";
+                case 80, 81, 82, 83, 84, 85, 86, 87 -> "B";
+                case 78, 79 -> "C+";
+                case 70, 71, 72, 73, 74, 75, 76, 77 -> "C";
+                case 68, 69 -> "D+";
+                case 60, 61, 62, 63, 64, 65, 66, 67 -> "D";
+                default -> "F";
+            };
+            System.out.println(dayString);
             s.nextLine();
             System.out.print("Continue? [y / n]");
             String userRes = s.next();
