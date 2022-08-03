@@ -76,7 +76,7 @@ public class ControlFlowExercises {
 //                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
 //            }
 //        }
-
+//
 //        s.nextLine();
 
         boolean confirmation;
