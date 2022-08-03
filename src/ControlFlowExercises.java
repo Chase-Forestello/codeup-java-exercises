@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 //        int i = 5;
@@ -39,16 +41,38 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
-        for (int i = 0; i <=100 ; i++) {
-            if (i % 3 == 0 && i % 5 == 0){
-                System.out.print("FizzBuzz, ");
-            }
-            else if (i % 3 == 0){
-                System.out.print("Fizz, ");
-            } else if (i % 5 == 0){
-                System.out.print("Buzz, ");
-            } else {
-                System.out.print(i + ", ");
+//        for (int i = 0; i <=100 ; i++) {
+//            if (i % 3 == 0 && i % 5 == 0){
+//                System.out.print("FizzBuzz, ");
+//            }
+//            else if (i % 3 == 0){
+//                System.out.print("Fizz, ");
+//            } else if (i % 5 == 0){
+//                System.out.print("Buzz, ");
+//            } else {
+//                System.out.print(i + ", ");
+//            }
+//        }
+
+        Scanner s = new Scanner(System.in);
+        System.out.print("What would you like to sqube to?:");
+        long userInput = s.nextInt();
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | ----- ");
+        for (long i = 1; i <= 3; i++) {
+            System.out.println(" " + i + "     | " + i * i + "       | " + i * i * i);
+        }
+        for (long i = 4; i <= userInput; i++) {
+            System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+        }
+        s.nextLine();
+        System.out.print("Continue? [y / n]");
+        String userRes = s.next();
+        boolean confirmation = userRes.equals("y");
+
+        if (confirmation) {
+            for (long i = userInput; i <= 1000; i++) {
+                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
             }
         }
     }
