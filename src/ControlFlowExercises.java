@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
-//        Counting from 5 to 15 program
+        // Counting from 5 to 15 program
 //        int i = 5;
 //        while (i <= 15){
 //            System.out.print(i + " ");
 //            i++;}
 
-//        Counting to 100 by 2 program
+        // Counting to 100 by 2 program
 //        int i = 0;
 //        do {
 //            System.out.print(i + " ");
