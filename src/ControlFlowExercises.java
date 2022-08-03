@@ -3,45 +3,54 @@ import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
+//        Counting from 5 to 15 program
 //        int i = 5;
 //        while (i <= 15){
 //            System.out.print(i + " ");
 //            i++;}
 
+//        Counting to 100 by 2 program
 //        int i = 0;
 //        do {
 //            System.out.print(i + " ");
 //            i+=2;
 //        } while (i <= 100);
 
+//        Counting down from 100 by -5 program
 //            int i = 100;
 //            do {
 //                System.out.print(i + " ");
 //                i-=5;
 //            } while (i >= -10);
 
+//        Square i program
 //        long i = 2;
 //        do {
 //            System.out.println(i);
 //            i = i*i;
 //        } while (i < 1000000);
 
+//        5 to 15 refactored for loop
 //        for (int i = 5; i <= 15 ; i++) {
 //            System.out.print(i + " ");
 //        }
 
+//        Counting to 100 by 2 refactored for loop
 //        for (int i = 0; i <= 100 ; i+=2) {
 //            System.out.println(i);
 //        }
 
+//        Counting down from 100 by -5 refactored for loop
 //        for (int i = 100; i >= -10 ; i-=5) {
 //            System.out.print(i + " ");
 //        }
 
+//        square i refactored for loop
 //        for (long i = 2; i < 1000000 ; i*=i) {
 //            System.out.println(i);
 //        }
 
+//        FizzBuzz program
         for (int i = 0; i <=100 ; i++) {
             if (i % 3 == 0 && i % 5 == 0){
                 System.out.print("FizzBuzz, ");
@@ -54,32 +63,33 @@ public class ControlFlowExercises {
                 System.out.print(i + ", ");
             }
         }
+            System.out.println("\n");
 
 
 //        Square & cube table program:
         Scanner s = new Scanner(System.in);
-//        System.out.print("What would you like to sqube to?:");
-//        long userInput = s.nextInt();
-//        System.out.println("number | squared | cubed");
-//        System.out.println("------ | ------- | ----- ");
-//        for (long i = 1; i <= 3; i++) {
-//            System.out.println(" " + i + "     | " + i * i + "       | " + i * i * i);
-//        }
-//        for (long i = 4; i <= userInput; i++) {
-//            System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
-//        }
-//        s.nextLine();
-//        System.out.print("Continue? [y / n]");
-//        String userRes = s.next();
-//        boolean confirmation = userRes.equals("y");
-//
-//        if (confirmation) {
-//            for (long i = userInput; i <= 1000; i++) {
-//                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
-//            }
-//        }
-//
-//        s.nextLine();
+        System.out.print("What would you like to sqube to?:");
+        long userInput = s.nextInt();
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | ----- ");
+        for (long i = 1; i <= 3; i++) {
+            System.out.println(" " + i + "     | " + i * i + "       | " + i * i * i);
+        }
+        for (long i = 4; i <= userInput; i++) {
+            System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+        }
+        s.nextLine();
+        System.out.print("Continue? [y / n]");
+        String userContinue = s.next();
+        boolean userConfirmation = userContinue.equals("y");
+
+        if (userConfirmation) {
+            for (long i = userInput; i <= 1000; i++) {
+                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+            }
+        }
+
+        s.nextLine();
 
 //        Grading program:
 
