@@ -55,25 +55,56 @@ public class ControlFlowExercises {
 //        }
 
         Scanner s = new Scanner(System.in);
-        System.out.print("What would you like to sqube to?:");
-        long userInput = s.nextInt();
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | ----- ");
-        for (long i = 1; i <= 3; i++) {
-            System.out.println(" " + i + "     | " + i * i + "       | " + i * i * i);
-        }
-        for (long i = 4; i <= userInput; i++) {
-            System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
-        }
-        s.nextLine();
-        System.out.print("Continue? [y / n]");
-        String userRes = s.next();
-        boolean confirmation = userRes.equals("y");
+//        System.out.print("What would you like to sqube to?:");
+//        long userInput = s.nextInt();
+//        System.out.println("number | squared | cubed");
+//        System.out.println("------ | ------- | ----- ");
+//        for (long i = 1; i <= 3; i++) {
+//            System.out.println(" " + i + "     | " + i * i + "       | " + i * i * i);
+//        }
+//        for (long i = 4; i <= userInput; i++) {
+//            System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+//        }
+//        s.nextLine();
+//        System.out.print("Continue? [y / n]");
+//        String userRes = s.next();
+//        boolean confirmation = userRes.equals("y");
+//
+//        if (confirmation) {
+//            for (long i = userInput; i <= 1000; i++) {
+//                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+//            }
+//        }
 
-        if (confirmation) {
-            for (long i = userInput; i <= 1000; i++) {
-                System.out.println(" " + i + "     | " + i * i + "      | " + i * i * i);
+//        s.nextLine();
+
+        boolean confirmation;
+        do {
+            System.out.print("Enter a numerical grade from 0 to 100:");
+            int userGrade = s.nextInt();
+            if (userGrade <= 59) {
+                System.out.println("Your grade: F");
+            } else if (userGrade <= 64) {
+                System.out.println("Your grade : D");
+            } else if (userGrade <= 69) {
+                System.out.println("Your grade : D+");
+            } else if (userGrade <= 77) {
+                System.out.println("Your grade : C");
+            } else if (userGrade <= 79) {
+                System.out.println("Your grade : C+");
+            } else if (userGrade <= 87) {
+                System.out.println("Your grade : B");
+            } else if (userGrade <= 89) {
+                System.out.println("Your grade : B+");
+            } else if (userGrade <= 98) {
+                System.out.println("Your grade : A");
+            } else if (userGrade <= 100) {
+                System.out.println("Your grade : A+");
             }
-        }
+            s.nextLine();
+            System.out.print("Continue? [y / n]");
+            String userRes = s.next();
+            confirmation = userRes.equals("y");
+        } while (confirmation);
     }
 }
