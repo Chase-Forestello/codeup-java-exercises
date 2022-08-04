@@ -1,3 +1,4 @@
+// Complete - Java I - Methods Dice Game Exercise
 import java.util.Scanner;
 
 public class HighLow {
