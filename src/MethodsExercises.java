@@ -1,4 +1,4 @@
-// Incomplete (stuck on #2) - Java I - Methods Exercise
+// Incomplete (stuck on factorial) - Java I - Methods Exercise
 
 import java.util.Scanner;
 
