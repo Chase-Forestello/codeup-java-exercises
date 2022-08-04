@@ -1,3 +1,4 @@
+// RPG console game
 import java.util.Scanner;
 
 public class RPG {
