@@ -1,6 +1,5 @@
 // Complete - Java I - Methods Dice Game Exercise
 import java.util.Scanner;
-
 public class HighLow {
     public static void main(String[] args) {
         Game();
