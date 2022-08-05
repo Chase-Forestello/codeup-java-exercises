@@ -1,4 +1,4 @@
-// Incomplete (stuck on factorial) - Java I - Methods Exercise
+//Complete - Java I - Methods Exercise
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class MethodsExercises {
         System.out.println(multiplyWithoutMultiplying(2, 3));
         System.out.println(multiplier(5, 5));
         System.out.println(getInteger(1, 25));
-//        System.out.println(getFactorial());
+        System.out.println(getFactorial());
         System.out.println(diceRoll());
     }
 
@@ -48,10 +48,8 @@ public class MethodsExercises {
 
     public static int multiplier(int num1, int num2) {
 
-        if ((num1 == 0) || (num2 == 0))
-            return 0;
-        else
-            return (num1 + multiplier(num1, num2 - 1));
+        if ((num1 == 0) || (num2 == 0)) return 0;
+        else return (num1 + multiplier(num1, num2 - 1));
     }
 
     public static int getInteger(int min, int max) {
@@ -63,21 +61,28 @@ public class MethodsExercises {
         return userInput = getInteger(min, max);
     }
 
-//??????????????????????????????????????????????????
-//    Come back to this later
+// This was a nightmare. Don't overthink problems!
+//    20 is breaking point
 
-//    public static int getFactorial() {
-//        long userInput = getInteger(1, 10);
-//        int result = 1;
-//        for (int i = 1; i <= userInput; i++) {
-//            for (int j = i; j < userInput; j++) {
-//                long res = 0;
-//                res += i;
-//            System.out.println(i +"! =" + result + " x " + res);
-//            }
-//        }
-//        return result;
-//    }
+    public static long getFactorial() {
+        System.out.println("Welcome to my factorial program.");
+        long userNum = getInteger(1, 10);
+        long fact = 1;
+        for (int i = 2; i <= userNum; i++) {
+            fact = fact * i;
+        }
+        System.out.print(userNum + "! = ");
+        int factor = 1;
+        for (int i = 1; i <= userNum; i++) {
+            if (i == userNum) {
+                System.out.print(factor + " = ");
+            } else {
+                System.out.print(factor + " x ");
+            }
+            factor += 1;
+        }
+        return fact;
+    }
 
     public static String diceRoll() {
         String goodbye = "Goodbye!";
@@ -86,13 +91,13 @@ public class MethodsExercises {
         System.out.print("Ready to roll? [y , n]:");
         String userConfirm = s.next();
         boolean confirm = userConfirm.equals("y");
-        if (confirm){
-            System.out.println("First roll: " + (int)(Math.random() * (dice - 1)));
-            System.out.println("Second roll: " + (int)(Math.random() * (dice - 1)));
+        if (confirm) {
+            System.out.println("First roll: " + (int) (Math.random() * (dice - 1)));
+            System.out.println("Second roll: " + (int) (Math.random() * (dice - 1)));
             System.out.print("Roll again? [y , n]:");
             String rollAgain = s.next();
             boolean again = rollAgain.equals("y");
-            if (again){
+            if (again) {
                 diceRoll();
             }
         }
