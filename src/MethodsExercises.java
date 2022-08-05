@@ -1,19 +1,21 @@
 //Complete - Java I - Methods Exercise
 
+import java.math.BigInteger;
 import java.util.Scanner;
+
 
 public class MethodsExercises {
     public static void main(String[] args) {
-        System.out.println(returnAddition(1, 0));
-        System.out.println(returnSubtraction(3, 1));
-        System.out.println(returnMultiplication(3, 1));
-        System.out.println(returnDivision(16, 4));
-        System.out.println(returnMod(5, 25));
-        System.out.println(multiplyWithoutMultiplying(2, 3));
-        System.out.println(multiplier(5, 5));
-        System.out.println(getInteger(1, 25));
+//        System.out.println(returnAddition(1, 0));
+//        System.out.println(returnSubtraction(3, 1));
+//        System.out.println(returnMultiplication(3, 1));
+//        System.out.println(returnDivision(16, 4));
+//        System.out.println(returnMod(5, 25));
+//        System.out.println(multiplyWithoutMultiplying(2, 3));
+//        System.out.println(multiplier(5, 5));
+//        System.out.println(getInteger(1, 25));
         System.out.println(getFactorial());
-        System.out.println(diceRoll());
+//        System.out.println(diceRoll());
     }
 
     static Scanner s = new Scanner(System.in);
@@ -62,11 +64,11 @@ public class MethodsExercises {
     }
 
 // This was a nightmare. Don't overthink problems!
-//    20 is breaking point
+//    50 is breaking point, 49! = 8.7 quintillion.
 
     public static long getFactorial() {
         System.out.println("Welcome to my factorial program.");
-        long userNum = getInteger(1, 10);
+        long userNum = getInteger(1, 1000);
         long fact = 1;
         for (int i = 2; i <= userNum; i++) {
             fact = fact * i;
