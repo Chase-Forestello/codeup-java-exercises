@@ -50,6 +50,7 @@ public class RPG {
     static int playerDef;
     static int playerAtk;
     static String playerStatus;
+    static String userAction;
 
     public static void classSelection() {
         System.out.print("What class are you, " + playerName + "?\n\n[ROGUE (low DEF high ATK)]\n\n[MAGE (low DEF high ATK)]\n\n[ARCHER (high DEF low ATK)]\n\nClass selection:");
@@ -78,7 +79,7 @@ public class RPG {
 
     public static void storyStart() {
         System.out.print("You suddenly awake in a forest, the air is thick with smoke and you hear a crackling sound.\n" + playerStatus);
-        String userAction = s.nextLine();
+        userAction = s.nextLine();
         if (userAction.equalsIgnoreCase("forward")) {
             storyFire();
         } else if (userAction.equalsIgnoreCase("back") || userAction.equalsIgnoreCase("left") || userAction.equalsIgnoreCase("right")) {
@@ -101,13 +102,13 @@ public class RPG {
         String userAction = s.nextLine();
         if (userAction.equalsIgnoreCase("left") || userAction.equalsIgnoreCase("right")) {
             System.out.println("You can't do that here, sorry!");
-            theEnd();
+            storyFire();
         } else if (userAction.equalsIgnoreCase("back")){
-            System.out.println("You re-trace your steps back into the thick brush");
-            System.out.print("The smoke is thicker here now too. You feel intense heat in every direction.\n" + playerStatus);
+            back();
             userAction = s.nextLine();
             if (userAction.equalsIgnoreCase("right") || userAction.equalsIgnoreCase("back") || userAction.equalsIgnoreCase("left")) {
                 System.out.println("You can't do that here, sorry!");
+                back();
             } else if (userAction.equalsIgnoreCase("forward")) {
                 storyFire();
             } else {
@@ -127,5 +128,9 @@ public class RPG {
 
     public static void close() {
         System.out.println("Goodbye!");
+    }
+    public static void back(){
+        System.out.println("You re-trace your steps back into the thick brush");
+        System.out.print("The smoke is thicker here now too. You feel intense heat in every direction.\n" + playerStatus);
     }
 }
