@@ -1,6 +1,6 @@
+// Complete - Java II - OOP Person.Person Exercise
 package Person;
 
-// Complete - Java II - OOP Person.Person Exercise
 public class Person {
     private String name;
 
