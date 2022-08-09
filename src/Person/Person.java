@@ -1,6 +1,8 @@
-// Complete - Java II - OOP Person Exercise
+package Person;
+
+// Complete - Java II - OOP Person.Person Exercise
 public class Person {
-    private static String name;
+    private String name;
 
     public static void main(String[] args) {
         Person person = new Person("Chase");
@@ -15,8 +17,8 @@ public class Person {
         person5.sayHello();
     }
 
-    private Person(String name) {
-        Person.name = name;
+    public Person(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -24,7 +26,7 @@ public class Person {
     }
 
     public void setName(String name) {
-        Person.name = name;
+        this.name = name;
     }
 
     public void sayHello() {
