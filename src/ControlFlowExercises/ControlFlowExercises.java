@@ -1,4 +1,4 @@
-// Complete - Java I - Control Flow Exercises
+package ControlFlowExercises;// Complete - Java I - Control Flow Exercises
 import java.util.Scanner;
 
 public class ControlFlowExercises {

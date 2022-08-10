@@ -1,12 +1,12 @@
-// Complete - Java I - Strings Bob Exercise
+package Bob;// Complete - Java I - Strings Bob.Bob Exercise
 import java.util.Scanner;
 
 public class Bob {
     public static void main(String[] args) {
-        System.out.println("Hello, welcome to Bob-bot.\nType something in console to talk to Bob-bot\nType 'stop' to stop the program.");
+        System.out.println("Hello, welcome to Bob.Bob-bot.\nType something in console to talk to Bob.Bob-bot\nType 'stop' to stop the program.");
         Scanner s = new Scanner(System.in);
 //        boolean confirmation;
-            System.out.println("Bob-bot: Hey.");
+            System.out.println("Bob.Bob-bot: Hey.");
         do{
             System.out.print("You:");
             String userInput = s.nextLine();
@@ -25,10 +25,10 @@ public class Bob {
             } else { // Checking for any other input aside from "",!,?,stop.
                 System.out.println("Whatever.");
             }
-            // Checking if user wants to continue talking with Bob-bot, currently
+            // Checking if user wants to continue talking with Bob.Bob-bot, currently
             // automated so user only needs to type "stop" when done rather than
             // continuously confirm the prompt.
-//            System.out.print("Keep talking to Bob-bot? [y / n]:");
+//            System.out.print("Keep talking to Bob.Bob-bot? [y / n]:");
 //            String userContinue = s.next();
 //            confirmation = userContinue.equals("y");
         } while(true); // Do while loop is always true until break condition ("stop") is met.

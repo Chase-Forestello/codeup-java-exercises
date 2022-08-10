@@ -1,4 +1,4 @@
-// Complete - Java I - Methods HiLo Exercise
+package HighLow;// Complete - Java I - Methods HiLo Exercise
 import java.util.Scanner;
 public class HighLow {
     public static void main(String[] args) {

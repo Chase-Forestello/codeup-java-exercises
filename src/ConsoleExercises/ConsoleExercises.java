@@ -1,4 +1,4 @@
-// Complete - Java I - Console IO Exercises
+package ConsoleExercises;// Complete - Java I - Console IO Exercises
 import java.util.Scanner;
 
 public class ConsoleExercises {
