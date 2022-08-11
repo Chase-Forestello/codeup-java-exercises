@@ -1,4 +1,5 @@
-package Bob;// Complete - Java I - Strings Bob.Bob Exercise
+// Complete - Java I - Strings Bob Exercise
+package Bob;
 import java.util.Scanner;
 
 public class Bob {
