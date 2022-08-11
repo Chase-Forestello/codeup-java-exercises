@@ -1,4 +1,4 @@
-//  Complete - Java II - Arrays Basics
+// Complete - Java II - Arrays Basics
 package Arrays;
 
 import Person.Person;
