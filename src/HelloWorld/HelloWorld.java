@@ -1,4 +1,5 @@
-package HelloWorld;// Complete - Java I - Java Intro - Hello World Exercise
+// Complete - Java I - Java Intro - Hello World Exercise
+package HelloWorld;
 
 public class HelloWorld {
     public static void main(String[] args) {
