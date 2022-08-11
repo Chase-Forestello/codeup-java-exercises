@@ -1,4 +1,4 @@
-// Incomplete - Java II - Inheritance and Polymorphism Exercises
+// Complete - Java II - Inheritance and Polymorphism Exercises
 package shapes;
 
 public class Rectangle {
