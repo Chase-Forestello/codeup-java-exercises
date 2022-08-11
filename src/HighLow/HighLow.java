@@ -1,5 +1,8 @@
-package HighLow;// Complete - Java I - Methods HiLo Exercise
+// Complete - Java I - Methods HiLo Exercise
+package HighLow;
+
 import java.util.Scanner;
+
 public class HighLow {
     public static void main(String[] args) {
         Game();
@@ -25,5 +28,4 @@ public class HighLow {
         } while (guessCount > 0);
         System.out.println("Maximum number of guesses reached! The number was: " + numberToGuess);
     }
-
 }
