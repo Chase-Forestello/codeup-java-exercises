@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class ArraysExercises {
     public static void main(String[] args) {
-//        int[] numbers = {1, 2, 3, 4, 5};
-//        System.out.println(Arrays.toString(numbers));
+
+        // Creating a new person array called my people with 3 Person objects inside
         Person[] myPeople = {new Person("Chase"), new Person("Sam"), new Person("Chris")};
         printNames(myPeople);
 
@@ -26,6 +26,7 @@ public class ArraysExercises {
         System.out.println(Arrays.toString(myPeople));
     }
 
+    // Method to add a new person to the array and override the old array
     private static Person[] addPerson(Person[] peopleString, String name) {
         Person[] newPeopleString = Arrays.copyOf(peopleString, peopleString.length + 1);
         newPeopleString[peopleString.length] = new Person(name);
@@ -33,6 +34,7 @@ public class ArraysExercises {
         return peopleString;
     }
 
+    // Method to print names from Person arrays ONLY
     private static void printNames(Person[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i].getName());
