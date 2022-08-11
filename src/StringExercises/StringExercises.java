@@ -1,6 +1,6 @@
+// Complete - Java I - Strings Exercise
 package StringExercises;
 
-// Complete - Java I - Strings Exercise
 public class StringExercises {
     public static void main(String[] args) {
         String noEducation = "We don't need no education\nWe don't need no thought control \n";
