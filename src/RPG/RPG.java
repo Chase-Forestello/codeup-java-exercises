@@ -106,15 +106,6 @@ public class RPG {
             storyFire();
         } else if (userAction.equalsIgnoreCase("back")){
             back();
-            userAction = s.nextLine();
-            if (userAction.equalsIgnoreCase("right") || userAction.equalsIgnoreCase("back") || userAction.equalsIgnoreCase("left")) {
-                System.out.println("You can't do that here, sorry!");
-                back();
-            } else if (userAction.equalsIgnoreCase("forward")) {
-                storyFire();
-            } else {
-                System.out.println("Not a command!");
-            }
         }else if (userAction.equalsIgnoreCase("forward")) {
             death();
         } else {
@@ -133,5 +124,15 @@ public class RPG {
     public static void back(){
         System.out.println("You re-trace your steps back into the thick brush");
         System.out.print("The smoke is thicker here now too. You feel intense heat in every direction.\n" + playerStatus);
+        userAction = s.nextLine();
+        if (userAction.equalsIgnoreCase("right") || userAction.equalsIgnoreCase("back") || userAction.equalsIgnoreCase("left")) {
+            System.out.println("You can't do that here, sorry!");
+            back();
+        } else if (userAction.equalsIgnoreCase("forward")) {
+            storyFire();
+        } else {
+            System.out.println("Not a command!");
+            back();
+        }
     }
 }
