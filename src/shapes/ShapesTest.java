@@ -10,17 +10,19 @@ public class ShapesTest {
 //        Rectangle box2 = new Square(2);
 //        System.out.println(box2.perimeter());
 //        System.out.println(box2.area());
-        Measurable myShape = new Measurable() {
-            @Override
-            public double getPerimeter() {
-                return 0;
-            }
 
-            @Override
-            public double getArea() {
-                return 0;
-            }
-        };
+//        Measurable myShape = new Measurable() {
+//            @Override
+//            public double getPerimeter() {
+//                return 0;
+//            }
+//
+//            @Override
+//            public double getArea() {
+//                return 0;
+//            }
+//        };
+
 //        Test your code by creating instances of both Square and Rectangle
 //        and assigning them to myShape, so you can display the shape's area
 //        and perimeter.
@@ -30,5 +32,16 @@ public class ShapesTest {
         Rectangle rectangle = new Rectangle(8, 8);
         System.out.println(rectangle.getArea());
         System.out.println(rectangle.getPerimeter());
+        System.out.println(rectangle.getArea());
+
+
+        // Squares return 0
+        Measurable myShape = new Square(2);
+        System.out.println(myShape.getArea());
+        System.out.println(myShape.getPerimeter());
+        myShape = new Rectangle(8, 8);
+        System.out.println(myShape.getArea());
+        System.out.println(myShape.getPerimeter());
+
     }
 }

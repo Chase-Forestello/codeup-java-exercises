@@ -9,6 +9,8 @@ public class Square extends Quadrilateral{
 
     public Square(int side) {
         super(side, side);
+        this.length = side;
+        this.width = side;
     }
 
     @Override
