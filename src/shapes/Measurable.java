@@ -1,3 +1,4 @@
+// Incomplete - Java II - Interfaces and Abstract Classes Exercise
 package shapes;
 
 public interface Measurable {

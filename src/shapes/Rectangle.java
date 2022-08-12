@@ -1,3 +1,4 @@
+// Incomplete - Java II - Interfaces and Abstract Classes Exercise
 // Complete - Java II - Inheritance and Polymorphism Exercises
 package shapes;
 
@@ -8,11 +9,13 @@ public class Rectangle extends Quadrilateral implements Measurable {
 
     @Override
     public double getPerimeter() {
+        System.out.print("Rectangle perimeter: ");
         return length * 2 + width * 2;
     }
 
     @Override
     public double getArea() {
+        System.out.print("Rectangle area: ");
         return length * width;
     }
 
