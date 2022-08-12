@@ -1,4 +1,4 @@
-// Incomplete - Java II - Interfaces and Abstract Classes Exercise
+// Complete - Java II - Interfaces and Abstract Classes Exercise
 // Complete - Java II - Inheritance and Polymorphism Exercises
 package shapes;
 
