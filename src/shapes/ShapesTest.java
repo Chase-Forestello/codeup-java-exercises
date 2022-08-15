@@ -40,9 +40,9 @@ public class ShapesTest {
         Measurable myShape = new Square(2);
         System.out.println(myShape.getArea());
         System.out.println(myShape.getPerimeter());
-        Measurable myShape1 = new Rectangle(8, 8);
-        System.out.println(myShape1.getArea());
-        System.out.println(myShape1.getPerimeter());
+        myShape = new Rectangle(8, 8);
+        System.out.println(myShape.getArea());
+        System.out.println(myShape.getPerimeter());
         // Below will not work because Measurable does not have a
         // get length method. It would need to be overridden
         // for both square and rectangle.
