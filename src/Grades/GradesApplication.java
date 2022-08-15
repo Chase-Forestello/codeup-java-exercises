@@ -1,4 +1,4 @@
-// Incomplete - Java II - Collections Exercises
+// Incomplete - Java II - Collections Exercises (working on Grocery List and bonus #5)
 package Grades;
 
 import util.Input;
@@ -61,7 +61,8 @@ public class GradesApplication {
         // students grades
 
         // Command Line Interface begins
-        boolean confirmation;
+//        boolean confirmation;
+        boolean confirmation = false;
         do {
             System.out.println("Which user would you like more information on?");
             System.out.println(students.keySet() + " or [ALL]" + " or [Class AVG]" + " or [CSV]");
@@ -71,9 +72,10 @@ public class GradesApplication {
             if (students.containsKey(userResponse)) {
                 System.out.println("Name: " + students.get(userResponse).getName());
                 System.out.println("GitHub Username: " + userResponse);
-                System.out.println("Current grades: " + students.get(userResponse));
+                System.out.println("Current grades: " + students.get(userResponse).getGrades());
                 double gradeAvg = students.get(userResponse).getGradeAverage();
                 System.out.format("Current Average: " + "%.1f%n", gradeAvg);
+                System.out.println("Attendance Percentage: " + students.get(userResponse).attendancePercentage() + "%");
                 System.out.println("---------------------------------------------------------");
                 // Condition for showing all student entries
             } else if (userResponse.equalsIgnoreCase("all")) {
@@ -84,6 +86,7 @@ public class GradesApplication {
                         System.out.println("GitHub Username: " + keySet[i]);
                         System.out.println("Current grades: " + students.get(keySet[i]).getGrades());
                         System.out.format("Current Average: " + "%.1f%n", gradeAvg);
+                        System.out.println("Attendance Percentage: " + students.get(keySet[i]).attendancePercentage() + "%");
                         System.out.println("-----------------------------------");
                         // Fencepost condition to stop printing horizontal divider on last student
                     } else if (i >= keySet.length - 1) {
@@ -91,6 +94,7 @@ public class GradesApplication {
                         System.out.println("GitHub Username: " + keySet[i]);
                         System.out.println("Current grades: " + students.get(keySet[i]).getGrades());
                         System.out.format("Current Average: " + "%.1f%n", gradeAvg);
+                        System.out.println("Attendance Percentage: " + students.get(keySet[i]).attendancePercentage() + "%");
                     }
                 }
                 System.out.println("---------------------------------------------------------");
@@ -103,22 +107,38 @@ public class GradesApplication {
                 System.out.println("Overall Class Average:" + avg / keySet.length);
                 // Condition to output a CSV of all student entries
             } else if (userResponse.equalsIgnoreCase("CSV")) {
-                System.out.println("name,github_username,average");
+                System.out.println("name,github_username,average,attendance_percentage");
                 for (String s : keySet) {
                     System.out.print(students.get(s).getName() + ",");
                     System.out.print(s + ",");
                     double gradeAvg = students.get(s).getGradeAverage();
-                    System.out.format("%.1f%n", gradeAvg);
+                    System.out.format("%.1f", gradeAvg);
+                    System.out.print(",");
+                    System.out.println(students.get(s).attendancePercentage());
+//                    System.out.print(students.get(s).attendancePercentage() + "%");
                 }
+                System.out.println("---------------------------------------------------------");
                 // Else condition for overall if-else loop if user input is not a valid
                 // student entry
             } else {
                 System.out.println("Sorry, no student found with the GitHub username of " + "\"" + userResponse + "\"" + ".");
             }
             System.out.println();
-            // Do-while confirmation prompt to continue or exit loop
-            confirmation = input.getString("See another student? [ y , n ]:").equalsIgnoreCase("y");
-        } while (confirmation);
+            // Do-while confirmation to continue or exit loop
+        } while (confirmation());
         System.out.println("Thank you!");
+    }
+    public static boolean confirmation() {
+        Input input = new Input();
+        String userInput = input.getString("See another student? [ y , n ]:");
+        if (userInput.equalsIgnoreCase("y")){
+            return true;
+        } else if (userInput.equalsIgnoreCase("n")) {
+            return false;
+
+        } else {
+            System.out.println("Invalid input.");
+            return confirmation();
+        }
     }
 }

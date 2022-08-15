@@ -1,8 +1,7 @@
-// Incomplete - Java II - Collections Exercises
+// Incomplete - Java II - Collections Exercises (working on Grocery List and bonus #5)
 package Grades;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Student {
@@ -38,16 +37,15 @@ public class Student {
     }
 
     // Returns a given students' attendance percentage
-    public int attendancePercentage() {
+    public double attendancePercentage() {
         String[] entrySet = attendance.values().toArray(new String[0]);
-        System.out.println(Arrays.toString(entrySet));
-            int absences = 0;
+            double absences = 0;
         for (int i = 0; i < this.attendance.size(); i++) {
             if (entrySet[i].equalsIgnoreCase("A")) {
                 absences ++;
             }
         }
-        return absences - attendance.size();
+        return (attendance.size() - absences) / attendance.size() * 100;
     }
 
     // Returns the average of the students grades
