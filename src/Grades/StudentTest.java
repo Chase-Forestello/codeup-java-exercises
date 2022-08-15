@@ -3,7 +3,7 @@ package Grades;
 
 public class StudentTest {
     public static void main(String[] args) {
-        Student chase = new Student ("Chase");
+        Student chase = new Student("Chase");
         Student sam = new Student("Sam");
         Student matthew = new Student("Matthew");
         chase.addGrade(98);
@@ -17,7 +17,6 @@ public class StudentTest {
         matthew.addGrade(98);
         System.out.println(matthew);
         System.out.println(chase);
-//        System.out.println(chase.getGrades());
         System.out.println("Chase's avg: " + chase.getGradeAverage());
         System.out.println("Sam's avg: " + sam.getGradeAverage());
         System.out.println("Matthew's avg: " + matthew.getGradeAverage());
