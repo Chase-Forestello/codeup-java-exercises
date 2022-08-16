@@ -1,4 +1,4 @@
-// Incomplete - Java II - Collections Exercises (working on Grocery List and bonus #5)
+// Complete - Java II - Collections Exercises (did not do GroceryList)
 package Grades;
 
 import java.util.ArrayList;
@@ -47,7 +47,15 @@ public class Student {
         }
         return (attendance.size() - absences) / attendance.size() * 100;
     }
-
+    public void getDaysMissed(){
+        String [] entrySet = attendance.values().toArray(new String[0]);
+        for (int i = 0; i <entrySet.length ; i++) {
+            if (entrySet[i].equalsIgnoreCase("A")){
+                String [] keys = (attendance.keySet()).toArray(new String[0]);
+                System.out.println(keys[i]);
+            }
+        }
+    }
     // Returns the average of the students grades
     public double getGradeAverage() {
         double avg = 0;

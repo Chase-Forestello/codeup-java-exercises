@@ -1,9 +1,9 @@
-// Incomplete - Java II - Collections Exercises (working on Grocery List and bonus #5)
+// Complete - Java II - Collections Exercises (did not do GroceryList)
+// Refactor into smaller methods
 package Grades;
 
 import util.Input;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class GradesApplication {
@@ -62,7 +62,6 @@ public class GradesApplication {
 
         // Command Line Interface begins
 //        boolean confirmation;
-        boolean confirmation = false;
         do {
             System.out.println("Which user would you like more information on?");
             System.out.println(students.keySet() + " or [ALL]" + " or [Class AVG]" + " or [CSV]");
@@ -76,25 +75,19 @@ public class GradesApplication {
                 double gradeAvg = students.get(userResponse).getGradeAverage();
                 System.out.format("Current Average: " + "%.1f%n", gradeAvg);
                 System.out.println("Attendance Percentage: " + students.get(userResponse).attendancePercentage() + "%");
+                System.out.println("Days missed: ");
+                students.get(userResponse).getDaysMissed();
                 System.out.println("---------------------------------------------------------");
                 // Condition for showing all student entries
             } else if (userResponse.equalsIgnoreCase("all")) {
                 for (int i = 0; i < keySet.length; i++) {
                     double gradeAvg = students.get(keySet[i]).getGradeAverage();
                     if (i < keySet.length - 1) {
-                        System.out.println("Name: " + students.get(keySet[i]).getName());
-                        System.out.println("GitHub Username: " + keySet[i]);
-                        System.out.println("Current grades: " + students.get(keySet[i]).getGrades());
-                        System.out.format("Current Average: " + "%.1f%n", gradeAvg);
-                        System.out.println("Attendance Percentage: " + students.get(keySet[i]).attendancePercentage() + "%");
+                        getAllStudents(students, keySet, i, gradeAvg);
                         System.out.println("-----------------------------------");
                         // Fencepost condition to stop printing horizontal divider on last student
                     } else if (i >= keySet.length - 1) {
-                        System.out.println("Name: " + students.get(keySet[i]).getName());
-                        System.out.println("GitHub Username: " + keySet[i]);
-                        System.out.println("Current grades: " + students.get(keySet[i]).getGrades());
-                        System.out.format("Current Average: " + "%.1f%n", gradeAvg);
-                        System.out.println("Attendance Percentage: " + students.get(keySet[i]).attendancePercentage() + "%");
+                        getAllStudents(students, keySet, i, gradeAvg);
                     }
                 }
                 System.out.println("---------------------------------------------------------");
@@ -114,8 +107,7 @@ public class GradesApplication {
                     double gradeAvg = students.get(s).getGradeAverage();
                     System.out.format("%.1f", gradeAvg);
                     System.out.print(",");
-                    System.out.println(students.get(s).attendancePercentage());
-//                    System.out.print(students.get(s).attendancePercentage() + "%");
+                    System.out.println(students.get(s).attendancePercentage() + "%");
                 }
                 System.out.println("---------------------------------------------------------");
                 // Else condition for overall if-else loop if user input is not a valid
@@ -128,10 +120,23 @@ public class GradesApplication {
         } while (confirmation());
         System.out.println("Thank you!");
     }
+
+    // Get all students method
+    public static void getAllStudents(HashMap<String, Student> students, String[] keySet, int i, double gradeAvg) {
+        System.out.println("Name: " + students.get(keySet[i]).getName());
+        System.out.println("GitHub Username: " + keySet[i]);
+        System.out.println("Current grades: " + students.get(keySet[i]).getGrades());
+        System.out.format("Current Average: " + "%.1f%n", gradeAvg);
+        System.out.println("Attendance Percentage: " + students.get(keySet[i]).attendancePercentage() + "%");
+        System.out.println("Days missed: ");
+        students.get(keySet[i]).getDaysMissed();
+    }
+
+    // Confirmation method
     public static boolean confirmation() {
         Input input = new Input();
         String userInput = input.getString("See another student? [ y , n ]:");
-        if (userInput.equalsIgnoreCase("y")){
+        if (userInput.equalsIgnoreCase("y")) {
             return true;
         } else if (userInput.equalsIgnoreCase("n")) {
             return false;
