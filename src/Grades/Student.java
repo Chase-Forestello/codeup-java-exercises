@@ -22,8 +22,11 @@ public class Student {
     }
 
     // Adds the given grade to the grades property
-    public void addGrade(int grade) {
-        grades.add(grade);
+    public void addGrade(int... grade) {
+        for (int i = 0; i < grade.length; i++) {
+            grades.add(grade[i]);
+
+        }
     }
 
     // Adds the given date and presence to the attendance property
@@ -32,30 +35,31 @@ public class Student {
             attendance.put(date, presence);
         } else {
             System.out.println("Invalid value input (\"A\" or \"P\" only)");
-            return;
         }
     }
 
     // Returns a given students' attendance percentage
     public double attendancePercentage() {
         String[] entrySet = attendance.values().toArray(new String[0]);
-            double absences = 0;
+        double absences = 0;
         for (int i = 0; i < this.attendance.size(); i++) {
             if (entrySet[i].equalsIgnoreCase("A")) {
-                absences ++;
+                absences++;
             }
         }
         return (attendance.size() - absences) / attendance.size() * 100;
     }
-    public void getDaysMissed(){
-        String [] entrySet = attendance.values().toArray(new String[0]);
-        for (int i = 0; i <entrySet.length ; i++) {
-            if (entrySet[i].equalsIgnoreCase("A")){
-                String [] keys = (attendance.keySet()).toArray(new String[0]);
+
+    public void getDaysMissed() {
+        String[] entrySet = attendance.values().toArray(new String[0]);
+        for (int i = 0; i < entrySet.length; i++) {
+            if (entrySet[i].equalsIgnoreCase("A")) {
+                String[] keys = (attendance.keySet()).toArray(new String[0]);
                 System.out.println(keys[i]);
             }
         }
     }
+
     // Returns the average of the students grades
     public double getGradeAverage() {
         double avg = 0;
