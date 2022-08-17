@@ -1,7 +1,7 @@
 // Complete - Java II - Arrays Basics
 package arrays;
 
-import Person.Person;
+import person.Person;
 
 import java.util.Arrays;
 
