@@ -1,5 +1,5 @@
 // Complete - Java I - Control Flow Exercises
-package ControlFlowExercises;
+package control_flow_exercises;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
