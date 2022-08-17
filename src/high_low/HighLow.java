@@ -1,5 +1,5 @@
 // Complete - Java I - Methods HiLo Exercise
-package HighLow;
+package high_low;
 
 import java.util.Scanner;
 
