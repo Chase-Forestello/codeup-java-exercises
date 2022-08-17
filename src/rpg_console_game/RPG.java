@@ -1,5 +1,5 @@
 // RPG console game
-package RPG;
+package rpg_console_game;
 
 import java.util.Locale;
 import java.util.Scanner;
