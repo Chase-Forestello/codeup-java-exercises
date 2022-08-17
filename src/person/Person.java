@@ -1,5 +1,5 @@
 //  Complete - Java II - OOP Person.Person Exercise
-package Person;
+package person;
 
 public class Person {
     private String name;
