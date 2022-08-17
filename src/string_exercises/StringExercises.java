@@ -1,5 +1,5 @@
 // Complete - Java I - Strings Exercise
-package StringExercises;
+package string_exercises;
 
 public class StringExercises {
     public static void main(String[] args) {
