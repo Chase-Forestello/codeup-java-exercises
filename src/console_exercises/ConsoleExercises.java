@@ -1,5 +1,5 @@
 // Complete - Java I - Console IO Exercises
-package ConsoleExercises;
+package console_exercises;
 import java.util.Scanner;
 
 public class ConsoleExercises {
