@@ -1,5 +1,5 @@
-// Java II - Interfaces & Abstraction - Employee Example
-package InterfacesAbstraction_EmployeeExample;
+// Complete - Java II - Interfaces & Abstraction - Employee Example
+package interfaces_abstraction_employee_example;
 
 public class Accountant extends Employee{
     public Accountant(String name, String department) {
