@@ -1,5 +1,5 @@
 // Complete - Java II - Arrays Basics
-package Arrays;
+package arrays;
 
 import Person.Person;
 
