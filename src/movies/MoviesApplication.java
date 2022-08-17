@@ -1,14 +1,12 @@
-// Complete-Java II-Arrays Movie Exercise
+// Complete - Java II - Arrays Movie Exercise
 
-package Movies;
-
-import Person.Person;
+package movies;
 
 import util.Input;
 
 import java.util.Arrays;
 
-import static Movies.MoviesArray.findAll;
+import static movies.MoviesArray.findAll;
 
 public class MoviesApplication {
 

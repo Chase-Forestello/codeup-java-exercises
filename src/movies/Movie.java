@@ -1,5 +1,5 @@
 //  Complete - Java II - Arrays Movie Exercise
-package Movies;
+package movies;
 
 public class Movie {
     private String name;
