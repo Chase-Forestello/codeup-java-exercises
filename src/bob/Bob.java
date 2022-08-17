@@ -1,5 +1,5 @@
 // Complete - Java I - Strings Bob Exercise
-package Bob;
+package bob;
 import java.util.Scanner;
 
 public class Bob {
