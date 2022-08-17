@@ -4,7 +4,7 @@ package InterfacesAbstraction_EmployeeExample;
 public class EmployeeMain {
     public static void main(String[] args) {
 
-        Employee genericWorker = new Accountant("Bob", "accounting");
+        Employee genericWorker = new Accountant("bob", "accounting");
         System.out.println(genericWorker.work());
         System.out.println(genericWorker.eatLunch());
         genericWorker.liftHeavyObject("ship");
