@@ -1,7 +1,5 @@
 // Complete - Java II - Arrays Server Name Generator
-package ServerNameGenerator;
-
-import java.util.Random;
+package server_name_generator;
 
 public class ServerNameGenerator {
 
