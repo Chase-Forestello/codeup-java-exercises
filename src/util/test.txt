@@ -1,0 +1,18 @@
+Hello
+9.9
+9
+hello
+9.9
+9
+hello
+9.9.
+9.9
+hello
+9.9.
+100.99
+hi
+111
+hi
+16
+
+* Edit run configuration > modify > redirect inputs > file path with inputs

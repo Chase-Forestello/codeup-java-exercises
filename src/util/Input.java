@@ -1,3 +1,4 @@
+// Incomplete - Java II - File I/O (grocery list applications)
 // Complete - Java II - Exceptions and Error Handling (CLI could be improved)
 // Complete - Java II - OOP Input Exercise
 package util;
@@ -64,7 +65,7 @@ public class Input {
 
     // Returns next int
     public int getInt(String prompt) {
-        while (true) {
+//        while (true) {
             System.out.print(prompt);
             try {
                 int userInput = Integer.valueOf(getString());
@@ -73,7 +74,8 @@ public class Input {
                 System.out.println("Invalid input");
                 System.out.println(e.getMessage());
             }
-        }
+//        }
+                return getInt(prompt);
     }
 
     // Returns double or continue prompting the user until they are within range (1-10).
