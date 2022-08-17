@@ -68,7 +68,6 @@ public class Input {
             System.out.print(prompt);
             try {
                 int userInput = Integer.valueOf(getString());
-                System.out.print("Valid input: ");
                 return userInput;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
@@ -80,25 +79,23 @@ public class Input {
     // Returns double or continue prompting the user until they are within range (1-10).
     // How to set up if statement to check for 1-10 while checking for exceptions?
     public double getDouble(double min, double max, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            boolean DoubleRange;
-            double userDouble;
-            do {
-                userDouble = 0;
-                try {
-                    userDouble = Double.valueOf(getString());
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid input");
-                    System.out.println(e.getMessage());
-                }
-                if (userDouble > max || userDouble < min) {
-                    System.out.print("Enter double within 1-10 range: ");
-                }
-                DoubleRange = (userDouble > max || userDouble < min);
-            } while (DoubleRange);
-            return userDouble;
-        }
+        System.out.print(prompt);
+        boolean DoubleRange;
+        double userDouble;
+        do {
+            userDouble = 0;
+            try {
+                userDouble = Double.valueOf(getString());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input");
+                System.out.println(e.getMessage());
+            }
+            if (userDouble > max || userDouble < min) {
+                System.out.print("Enter double within 1-10 range: ");
+            }
+            DoubleRange = (userDouble > max || userDouble < min);
+        } while (DoubleRange);
+        return userDouble;
     }
 
     // Returns next double
@@ -106,9 +103,7 @@ public class Input {
         while (true) {
             System.out.print(prompt);
             try {
-                double userInput = Double.valueOf(getString());
-                System.out.println("Valid input: ");
-                return userInput;
+                return Double.valueOf(getString());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
                 System.out.println(e.getMessage());
@@ -122,7 +117,6 @@ public class Input {
             System.out.print(prompt);
             try {
                 userInput = Integer.valueOf(getString(), 2);
-                System.out.println("Valid input: ");
                 return userInput;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
@@ -137,7 +131,6 @@ public class Input {
             System.out.print(prompt);
             try {
                 userInput = Integer.valueOf(getString(), 16);
-                System.out.println("Valid input: ");
                 return userInput;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input: ");
