@@ -1,5 +1,5 @@
-// Incomplete - Java II - Collections Exercises
-package Grades;
+// Complete - Java II - Collections Exercises (did not do GroceryList)
+package grades;
 
 public class StudentTest {
     public static void main(String[] args) {

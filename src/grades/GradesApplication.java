@@ -1,6 +1,6 @@
 // Complete - Java II - Collections Exercises (did not do GroceryList)
 // Refactor into smaller methods
-package Grades;
+package grades;
 
 import util.Input;
 

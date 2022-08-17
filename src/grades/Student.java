@@ -1,5 +1,5 @@
 // Complete - Java II - Collections Exercises (did not do GroceryList)
-package Grades;
+package grades;
 
 import java.util.ArrayList;
 import java.util.HashMap;
