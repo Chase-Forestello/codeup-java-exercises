@@ -13,13 +13,15 @@ public class GroceryListMain {
         groceryList.addGroceryItem(naranjas);
         groceryList.addGroceryItem(tocino);
 
-        groceryList.printItems();
+//        groceryList.printItems();
 
         groceryList.removeGroceryItem("Bacon");
 
-        groceryList.printItems();
+//        groceryList.printItems();
 
-        groceryList.saveToFile();
+        GroceryListGateway.writeToFile(groceryList);
+        GroceryList fileList = GroceryListGateway.readFromFile();
+        fileList.printItems();
 
     }
 }

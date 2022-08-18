@@ -21,12 +21,20 @@ public class GroceryList {
     public void printItems() {
         System.out.println("My Grocery List");
         for (GroceryItem item : groceryItems) {
-            System.out.println("\t" + item);
+            System.out.println(item);
         }
     }
 
     public void removeGroceryItem(String itemName) {
         // find index of item with itemName
+        int index = getIndexOfItemByName(itemName);
+        // remove te item at that index
+        if (index > -1) {
+            groceryItems.remove(index);
+        }
+    }
+
+    private int getIndexOfItemByName(String itemName) {
         int index = -1;
         for (int i = 0; i < groceryItems.size(); i++) {
             GroceryItem item = groceryItems.get(i);
@@ -36,47 +44,62 @@ public class GroceryList {
                 index = i;
             }
         }
-
-        // remove te item at that index
-        if (index > -1) {
-            groceryItems.remove(index);
-        }
+        return index;
     }
 
-    public void saveToFile() {
-        // Make path object
-        Path file = makeFileAndDirectory();
-        List<String> tempItems = new ArrayList<>();
+    //    public void saveToFile() {
+//        // Make path object
+//        Path file = makeFileAndDirectory();
+//        List<String> tempItems = new ArrayList<>();
+//        for (GroceryItem item : groceryItems) {
+//            tempItems.add(item.toString());
+//        }
+//        try {
+//            assert file != null;
+//            Files.write(file, tempItems);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+//
+//    private Path makeFileAndDirectory() {
+//        try {
+//
+//            Path groceryFolder = Paths.get("/Users", "chase", "Codeup", "codeup-java-exercises", "src", "file_IO", "grocery_folder");
+//            Path groceryListFile = Paths.get("/Users", "chase", "Codeup", "codeup-java-exercises", "src", "file_IO", "grocery_folder", "GroceryList");
+//            if (Files.exists(groceryFolder)) {
+//                System.out.println("Already exists.");
+//            } else {
+//                Files.createDirectory(groceryFolder);
+//            }
+//            if (Files.exists(groceryListFile)) {
+//                System.out.println("Already exists.");
+//            } else {
+//                Files.createFile(groceryListFile);
+//            }
+//            return groceryListFile;
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return null;
+//    }
+
+    public List<String> toStringList() {
+        List<String> itemStrings = new ArrayList<>();
         for (GroceryItem item : groceryItems) {
-            tempItems.add(item.toString());
+            itemStrings.add(item.toString());
         }
-        try {
-            assert file != null;
-            Files.write(file, tempItems);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        return itemStrings;
     }
 
-    private Path makeFileAndDirectory() {
-        try {
+    public GroceryItem getItemByName(String itemName) {
+        int index = getIndexOfItemByName(itemName);
 
-            Path groceryFolder = Paths.get("grocery_folder");
-            Path groceryFile = Paths.get("grocery_folder", "groceryList.txt");
-            if (Files.exists(groceryFolder)) {
-                System.out.println("Already exists.");
-            } else {
-                Files.createDirectory(groceryFolder);
-            }
-            if (Files.exists(groceryFile)) {
-                System.out.println("Already exists.");
-            } else {
-                Files.createFile(groceryFile);
-            }
-            return groceryFile;
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        // 2. remove the item in the grocery list at that index
+        if(index > -1) {
+            return groceryItems.get(index);
         }
+        System.out.println("Could not find item: " + itemName);
         return null;
     }
 }
